@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ur">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Primary">
+    <a href="index.html" class="spotify-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 168" style="width: 24px; height: 24px; fill: #1db954;">
+        <path d="M84,0C37.7,0,0,37.7,0,84s37.7,84,84,84s84-37.7,84-84S130.3,0,84,0z
+          M122.1,121.8c-1.5,2.5-4.8,3.3-7.3,1.8
+          c-20.1-12.3-45.4-15.1-75.2-8.5
+          c-2.9,0.7-5.8-1.1-6.5-4
+          c-0.7-2.9,1.1-5.8,4-6.5
+          c32.6-7.3,60.7-4.1,83.2,9.7
+          C122.8,115.8,123.6,119.3,122.1,121.8z
+          M132.3,98.4c-1.8,2.9-5.6,3.8-8.5,2
+          c-23-14.1-58.2-18.2-85.4-10.3
+          c-3.3,1-6.8-0.8-7.8-4.1
+          c-1-3.3,0.8-6.8,4.1-7.8
+          c30.4-9,69.4-4.5,95.5,11.1
+          C133.2,91.4,134.1,95.3,132.3,98.4z
+          M133.8,74.5
+          c-27.5-16.3-72.9-17.8-99.3-10
+          c-3.9,1.1-8-1.1-9.1-5
+          c-1.1-3.9,1.1-8,5-9.1
+          c29.9-8.7,79.3-7,110.4,11.5
+          c3.5,2,4.6,6.5,2.6,10
+          C141.4,75.5,137.3,76.5,133.8,74.5z"/>
+      </svg>
+      <span class="brand-text" style="font-weight: bold; font-size: 22px;">Spotify</span>
+    </a>
+
+    <nav class="nav">
+      <ul>
+        <li>
+          <button class="nav-btn" id="homeBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.5 2.23a1 1 0 0 0-1 0L3 7.87a1 1 0 0 0-.5.87V20a1 1 0 0 0 1 1h5v-6h4v6h5a1 1 0 0 0 1-1V8.74a1 1 0 0 0-.5-.87z"/></svg>
+            <span class="label">Home</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="nav-btn" id="searchBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <span class="label">Search</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="nav-btn" id="libraryBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4 6H2v14a2 2 0 0 0 2 2h14v-2H4zm16-4H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 14H8V4h12z"/></svg>
+            <span class="label">Your Library</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="nav-btn" id="favoritesBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span class="label">Favorites</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="nav-btn" id="downloadsBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            <span class="label">Downloads</span>
+          </button>
+        </li>
+
+        <li id="adminNavLi" style="display: none;">
+          <button class="nav-btn" id="adminBtn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84a.48.48 0 0 0-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87a.49.49 0 0 0 .12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.49.49 0 0 0-.12-.61l-2.03-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+            <span class="label">Admin Panel</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+<div class="sep"></div>
+
+<div class="actions">
+  <button class="create-playlist" id="playlistBtn">
+    + Create Playlist
+  </button>
+</div>
+
+    <footer class="sidebar-footer">
+      <a href="#" class="footer-link">Cookies</a>
+      <a href="#" class="footer-link">Privacy</a>
+      <button class="lang-btn">English ⌄</button>
+    </footer>
+
+  </aside>
+
+  <!-- Main Section -->
+  <main class="main">
+    <header class="topbar">
+     
+
+      <div class="topbar-actions" id="topbarActions">
+    <button class="signup-btn" onclick="window.location='signup.html'">Sign up</button>
+    <button class="login-btn" onclick="window.location='login.html'">Log in</button>
+</div>
+    </header>
+
+    <h1>Spotify Playlist</h1>
+
+  
+
+<div id="searchSection" style="display: none; margin: 20px 0;">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search songs..."
+    style="width:100%; padding:12px; border-radius:20px; border:none; outline:none;"
+  >
+</div>
+
+
+    <!-- Song Cards Container -->
+    <div class="song-container" id="songContainer"></div>
+
+  </main>
+    <!-- Simple Bottom Music Player -->
+
+
+<!-- Music Player Bar -->
+<div class="music-player">
+  <button class="player-btn" id="prev" title="Previous">&#9664;&#9664;</button>
+
+<button class="player-btn play" id="play" title="Play/Pause">&#9654;</button>
+
+<button class="player-btn" id="next" title="Next">&#9654;&#9654;</button>
+
+  <!-- <button class="player-btn" title="Previous">&#9664;&#9664;</button>
+  <button class="player-btn play" title="Play/Pause">&#9654;</button>
+  <button class="player-btn" title="Next">&#9654;&#9654;</button> -->
+
+  <input type="range" class="seek-bar" value="0" max="100">
+
+  <div class="volume-control">
+    <span class="volume-icon"></span>
+    <span class="current-time">0:00</span>
+<span class="total-time">0:00</span>
+
+    <input type="range" class="volume-slider" min="0" max="100" value="50">
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
